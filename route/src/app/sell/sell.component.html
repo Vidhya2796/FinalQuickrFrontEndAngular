@@ -1,0 +1,349 @@
+<!-- MODAL STARTS -->
+ <head>
+
+    <style>
+    
+    
+    /* Full-width input fields */
+    
+    /* Set a style for all buttons */
+    
+    
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    /* Center the image and position the close button */
+    
+    
+    
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #343a40;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 41%; /* Could be more or less, depending on screen size */
+    }
+    
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+    
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+    
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+    }
+      
+    @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+    }
+    </style>
+    </head>
+ <!-- MODAL OVER -->
+
+
+ 
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div id="id01" >
+		<a class="navbar-brand "  href="/">Quikr<sub>Easy to Change</sub> </a>
+ 
+    <form [hidden]="submitted" [formGroup]="sellForm" novalidate (ngSubmit)="onSell()" class="modal-content animate">
+		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	<div class="login-wrap ">
+		<div class="login-html bg-dark">
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">The best way to sell your Car</label>
+			<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab"></label> 
+			<div class="login-form">
+				<div class="sign-in-htm">
+            <!-- productId:number;
+            category:string;
+            productBrand:string;
+            productModel:string;
+            color:string;
+            image:string;
+            fuelType:string;
+            yearOfRegistration:Date;
+            kmsDriven:number;
+            location:string;
+            description:string;
+            expectedSellingPrice:Number;
+            sellerName:string;
+            sellerPhoneNumber:number;
+            sellerEmail:string; -->
+
+
+            <!-- productId -->
+						<div class="group">
+	
+	
+								<label for="productId" class="label"> Car No <b style="color:red">*</b></label>
+													<input id="productId"  class="input" type="number" formControlName="productId" [(ngModel)]="productDetails.productId">
+													
+            </div>
+            
+            <div *ngIf="sellForm.controls['productId'].invalid && (sellForm.controls['productId'].dirty || sellForm.controls['productId'].touched)">
+                <div *ngIf="sellForm.controls['productId'].errors.required">
+                    <b style="color:#1161ee">Car No  is required.</b>
+              </div>
+              </div>
+
+            <!-- 2.category -->	
+							
+
+										<div class="group">
+	
+	
+												<label for="category" class="label"> Category <b style="color:red">*</b></label>
+																	<input id="category" type="text" class="input"  formControlName="category" [(ngModel)]="productDetails.category">
+																	
+											</div>
+            
+                      <div *ngIf="sellForm.controls['category'].invalid && (sellForm.controls['category'].dirty || sellForm.controls['category'].touched)">
+                          <div *ngIf="sellForm.controls['category'].errors.required">
+                              <b style="color:#1161ee">category  is required.</b>
+                        </div>
+                        </div>
+            <!-- 3.productBrand -->
+										
+										<div class="group">
+	
+	
+												<label for="productBrand" class="label"> Product Brand <b style="color:red">*</b></label>
+																	<input id="productBrand" class="input" type="text" formControlName="productBrand" [(ngModel)]="productDetails.productBrand">
+																	
+                    </div>
+                    <div *ngIf="sellForm.controls['productBrand'].invalid && (sellForm.controls['productBrand'].dirty || sellForm.controls['productBrand'].touched)">
+                          <div *ngIf="sellForm.controls['productBrand'].errors.required">
+                              <b style="color:#1161ee">productBrand  is required.</b>
+                          </div>
+                    </div>
+															
+            <!-- 4. productModel -->
+
+	
+					<div class="group">
+						<label for="productModel" class="label">Product Model <b style="color:red">*</b></label>
+						<input id="productModel" type="text" class="input" formControlName="productModel" [(ngModel)]="productDetails.productModel">
+					</div>
+
+          <div *ngIf="sellForm.controls['productModel'].invalid && (sellForm.controls['productModel'].dirty || sellForm.controls['productModel'].touched)">
+              <div *ngIf="sellForm.controls['productModel'].errors.required">
+                  <b style="color:#1161ee">productModel  is required.</b>
+              </div>
+        </div>
+
+          <!-- 5.color -->
+											<div class="group">
+												<label for="color" class="label"> Color:</label>
+												<input id="color" type="text" class="input" formControlName="color" [(ngModel)]="productDetails.color">
+												
+                      </div>
+                <!-- 6.image -->
+											<div class="group">
+                          <label for="image" class="label"> Image Link <b style="color:red">*</b></label>
+                          <input id="image" type="text" class="input" formControlName="image" [(ngModel)]="productDetails.image">
+                          
+                        </div>
+                        <div *ngIf="sellForm.controls['image'].invalid && (sellForm.controls['image'].dirty || sellForm.controls['image'].touched)">
+                            <div *ngIf="sellForm.controls['image'].errors.required">
+                                <b style="color:#1161ee">image  is required.</b>
+                            </div>
+                      </div>
+                        
+                <!-- 7.fuelType -->
+											<div class="group">
+                          <label for="fuelType" class="label"> Fuel Type <b style="color:red">*</b></label>
+                          <input id="fuelType" type="text" class="input" formControlName="fuelType" [(ngModel)]="productDetails.fuelType">
+                          
+                        </div>
+                        <div *ngIf="sellForm.controls['fuelType'].invalid && (sellForm.controls['fuelType'].dirty || sellForm.controls['fuelType'].touched)">
+                            <div *ngIf="sellForm.controls['fuelType'].errors.required">
+                                <b style="color:#1161ee">fuelType  is required.</b>
+                            </div>
+                      </div>
+
+                  <!-- 8.yearOfRegistration -->
+											<div class="group">
+                          <label for="yearOfRegistration" class="label"> Year Of Registration <b style="color:red">*</b></label>
+                         <!--  <input id="yearOfRegistration" type="text" class="input" formControlName="yearOfRegistration" [(ngModel)]="productDetails.yearOfRegistration"> -->
+                          <select class="input" formControlName="yearOfRegistration" [(ngModel)]="productDetails.yearOfRegistration">
+                              
+                              <option>1996</option>
+                              <option>1997</option>
+                              <option>1998</option>
+                              <option>1999</option>
+                              <option>2000</option>
+                              <option>2001</option>
+                              <option>2002</option>
+                              <option>2003</option>
+                              <option>2004</option>
+                              <option>2005</option>
+                              <option>2006</option>
+                              <option>2007</option>
+                              <option>2008</option>
+                              <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            
+                          </select>
+                        </div>
+                        <div *ngIf="sellForm.controls['yearOfRegistration'].invalid && (sellForm.controls['yearOfRegistration'].dirty || sellForm.controls['yearOfRegistration'].touched)">
+                            <div *ngIf="sellForm.controls['yearOfRegistration'].errors.required">
+                                <b style="color:#1161ee">yearOfRegistration  is required.</b>
+                            </div>
+                      </div>
+
+                        <!-- 9.kmsDriven -->
+											<div class="group">
+                          <label for="kmsDriven" class="label"> KmsDriven <b style="color:red">*</b></label>
+                          <input id="kmsDriven" type="text" class="input" formControlName="kmsDriven" [(ngModel)]="productDetails.kmsDriven">
+                          
+                        </div>
+                        <div *ngIf="sellForm.controls['kmsDriven'].invalid && (sellForm.controls['kmsDriven'].dirty || sellForm.controls['kmsDriven'].touched)">
+                            <div *ngIf="sellForm.controls['kmsDriven'].errors.required">
+                                <b style="color:#1161ee">kmsDriven  is required.</b>
+                            </div>
+                      </div>
+
+                        <!-- 10.location -->
+											<div class="group">
+                          <label for="location" class="label"> Location <b style="color:red">*</b></label>
+                          <input id="location" type="text" class="input" formControlName="location" [(ngModel)]="productDetails.location">
+                          
+                        </div>
+                        <div *ngIf="sellForm.controls['location'].invalid && (sellForm.controls['location'].dirty || sellForm.controls['location'].touched)">
+                            <div *ngIf="sellForm.controls['location'].errors.required">
+                                <b style="color:#1161ee">location  is required.</b>
+                            </div>
+                      </div>
+
+                        <!-- 11.description -->
+											<div class="group">
+                          <label for="description" class="label"> Description:</label>
+                          <input id="description" type="text" class="input" formControlName="description" [(ngModel)]="productDetails.description">
+                          
+                        </div>
+
+
+                        <!-- 12.expectedSellingPrice -->
+											<div class="group">
+                          <label for="expectedSellingPrice" class="label"> Expected SellingPrice:</label>
+                          <input id="expectedSellingPrice" type="number" class="input" formControlName="expectedSellingPrice" [(ngModel)]="productDetails.expectedSellingPrice">
+                          
+                        </div>
+
+                        <!-- 13.sellerName -->
+											<div class="group">
+                          <label for="sellerName" class="label"> Seller Name:</label>
+                          <input id="sellerName" type="text" class="input" formControlName="sellerName" [(ngModel)]="productDetails.sellerName">
+                          
+                        </div>
+
+                        <!-- 14.sellerPhoneNumber -->
+											<div class="group">
+                          <label for="sellerPhoneNumber" class="label"> Seller PhoneNumber <b style="color:red">*</b></label>
+                          <input id="sellerPhoneNumber" type="number" class="input" formControlName="sellerPhoneNumber" [(ngModel)]="productDetails.sellerPhoneNumber">
+                          
+                        </div>
+
+                        <div *ngIf="sellForm.controls['sellerPhoneNumber'].invalid && (sellForm.controls['sellerPhoneNumber'].dirty || sellForm.controls['sellerPhoneNumber'].touched)">
+                            <div *ngIf="sellForm.controls['sellerPhoneNumber'].errors.required">
+                                <b style="color:#1161ee">Phone Number  is required.</b>
+                          </div>
+                          <div *ngIf="sellForm.controls['sellerPhoneNumber'].errors.pattern">
+                              <b style="color:#1161ee">Phone number should start with 9/8/7/6 and of 10 digits</b>
+                            </div>
+                          </div>
+
+                        <!-- 15.sellerEmail -->
+											<div class="group">
+                          <label for="sellerEmail" class="label"> SellerEmail <b style="color:red">*</b></label>
+                          <input id="sellerEmail" type="text" class="input" formControlName="sellerEmail" [(ngModel)]="productDetails.sellerEmail">
+                          
+                        </div>
+                        <div *ngIf="sellForm.controls['sellerEmail'].invalid && (sellForm.controls['sellerEmail'].dirty || sellForm.controls['sellerEmail'].touched)">
+                            <div *ngIf="sellForm.controls['sellerEmail'].errors.required">
+                                <b style="color:#1161ee">	Email is required.</b>
+                            </div>
+                            <div *ngIf="sellForm.controls['sellerEmail'].errors.pattern">
+                             
+                                <b style="color:#1161ee">Email id pattern should be like this [*@gmail.com]</b>
+                            </div>
+                      </div>
+
+
+
+<!-- SELL BUTTON -->
+					<div class="group">
+											<!-- <input type="submit" class="button" value="Sign In"> -->
+											<button class="button" [disabled]="!sellForm.valid" type="submit">Sell</button>
+          </div>
+          
+				
+				</div>
+			
+			</div>
+	</div>
+	</div>
+	</form>
+
+	<br>
+	<br>
+
+	<div [hidden]="!submitted">
+			<h4>You submitted successfully! Welcome {{response.sellerName}}</h4>
+		<!-- 	<button class="btn btn-success" (click)="onLogin()">Login</button> -->
+		</div> 
+	</div>

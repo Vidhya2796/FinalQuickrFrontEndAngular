@@ -1,0 +1,475 @@
+<!--  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>  -->
+<!------ Include the above in your HEAD tag ---------->
+<!-- 
+<div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div class="box">
+                    <div class="shape1"></div>
+                    <div class="shape2"></div>
+                    <div class="shape3"></div>
+                    <div class="shape4"></div>
+                    <div class="shape5"></div>
+                    <div class="shape6"></div>
+                    <div class="shape7"></div>
+                    <div class="float">
+                        <form class="form" action="">
+                            <div class="form-group">
+                                <label for="username" class="text-white">Username:</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-white">Password:</label><br>
+                                <input type="text" name="password" id="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a routerLink="/product">product</a> -->
+
+<!-- EMAIL FIELD -->
+
+ <!--  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head> -->
+ 
+
+       <!--  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+
+
+
+
+
+
+
+
+  <!--   mallika -->   
+
+ <!-- <head>
+     
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+    </head>
+    <div class="backgroundcolor" style="text-align:center">
+        <h3>
+         Welcome {{response}}
+        
+       </h3>
+      
+       <form [formGroup]="loginForm" novalidate (ngSubmit)="onLogin()">
+                <div class="form-group">
+                   
+                    <label class="center-block">
+                         
+                        Email Id* <input type="email" class="form-control" formControlName="email" [(ngModel)]="loginAccount.email">
+                        
+                    </label>
+                </div>
+                
+
+                <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="alert alert-danger">
+						<div *ngIf="loginForm.controls['email'].errors.required">
+							Email is required.
+					  </div>
+					  <div *ngIf="loginForm.controls['email'].errors.pattern">
+							 [(a-z),(A-Z),(0-9)@gmail.com] 
+							Email id pattern should be like this [*@gmail.com]
+					  </div>
+		        </div>
+
+         PASSWORD FIELD
+                <div class="form-group">
+                    <label class="center-block">Password*
+                        <show-hide-password size="sm" icon="fontawesome" btnStyle="success" [btnOutline]="false"> 
+                                <input  type="password" class="form-control" formControlName="password" [(ngModel)]="loginAccount.password">
+                           </show-hide-password>
+             
+
+
+                    </label>
+                </div>
+
+                <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert alert-danger">
+                    <div *ngIf="loginForm.controls['password'].errors.required">
+                        password is required.
+                    </div>
+                
+                    <div *ngIf="loginForm.controls['password'].errors.maxlength">
+                                Maximum characters for password is 15
+                    </div>
+                    <div *ngIf="loginForm.controls['password'].errors.minlength">
+                                Minimum characters for password is 6
+                    </div>
+                </div>
+ LOGIN BUTTON 
+                <button class="btn btn-primary" [disabled]="!loginForm.valid" type="submit">Login</button>
+
+                
+</form>
+
+ <a routerLink="/reg" >registration</a>
+
+       </div> -->
+
+  
+  
+
+<!-- mallika end -->
+
+
+
+
+
+
+
+<!--  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<a class="navbar-brand "  href="/">Quikr<sub>Easy to Change</sub> </a>
+
+<form [hidden]="submitted" [formGroup]="loginForm" novalidate (ngSubmit)="onLogin()">
+  <div class="login-wrap ">  
+	<div class="login-html bg-dark">
+       
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+
+
+					<label for="user" class="label">Username or Email</label>
+                    <input id="user" type="email" class="input"  formControlName="email" [(ngModel)]="loginAccount.email">
+                    
+                </div>
+                
+
+                <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="alert alert-danger">
+						<div *ngIf="loginForm.controls['email'].errors.required">
+							Email is required.
+					  </div>
+					  <div *ngIf="loginForm.controls['email'].errors.pattern">
+							
+							Email id pattern should be like this [*@gmail.com]
+					  </div>
+		        </div>
+
+
+
+
+
+
+
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" formControlName="password" [(ngModel)]="loginAccount.password">
+                </div>
+                
+                 <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert alert-danger">
+                        <div *ngIf="loginForm.controls['password'].errors.required">
+                            password is required.
+                        </div>
+                    
+                        <div *ngIf="loginForm.controls['password'].errors.maxlength">
+                                    Maximum characters for password is 15
+                        </div>
+                        <div *ngIf="loginForm.controls['password'].errors.minlength">
+                                    Minimum characters for password is 6
+                        </div>
+                    
+                    </div> 
+
+
+
+				<div class="group">
+                   
+                    
+                    <button class="button" [disabled]="!loginForm.valid" type="submit" >Sign In</button>
+				</div>
+				<div class="hr"></div>
+            </div>
+            
+			<div class="for-pwd-htm">
+				<div class="group">
+					<label for="user" class="label">Username or Email</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Reset Password">
+                </div>
+           
+				<div class="hr"></div>
+			</div>
+		</div>
+</div>
+</div>
+
+</form>
+
+<div [hidden]="!submitted" > 
+     
+       <div *ngIf="response" class="position">
+            You successfully logged in!  
+            <br>
+      <button  class="btn btn-success" (click)="onLoginPage()">Continue Browsing</button>
+           
+        
+          </div>
+          <div *ngIf="!response" class="position">
+             <h6>Invalid credentails</h6><br>
+
+             <button  class="btn btn-success" (click)="onProduct()">retry</button>
+
+              </div>
+              
+      
+    </div> 
+<br> -->
+
+
+<head>
+
+    <style>
+    
+    
+    /* Full-width input fields */
+    
+    /* Set a style for all buttons */
+    
+    
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    /* Center the image and position the close button */
+    
+    
+    
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #343a40;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 35%; /* Could be more or less, depending on screen size */
+    }
+    
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+    
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+    
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+    }
+      
+    @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+    }
+    </style>
+    </head>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+
+<div id="id01" >
+<a class="navbar-brand "  href="/">Quikr<sub>Easy to Change</sub> </a>
+
+<form [hidden]="submitted" [formGroup]="loginForm" novalidate (ngSubmit)="onLogin()" class="modal-content animate">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <div class="login-wrap ">  <!-- 1 -->
+	<div class="login-html bg-dark"><!-- 2 -->
+       
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab">Forgot Password</label>
+		<div class="login-form"><!-- 3 -->
+
+			<div class="sign-in-htm"><!-- 4 -->
+                
+                <div class="group">
+
+
+					<label for="user" class="label">Username or Email</label>
+                    <input id="user" type="email" class="input"  formControlName="email" [(ngModel)]="loginAccount.email">
+                    
+                </div>
+                
+
+                <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+						<div *ngIf="loginForm.controls['email'].errors.required">
+                                <b style="color:#1161ee">Email is required.</b>
+					  </div>
+					  <div *ngIf="loginForm.controls['email'].errors.pattern">
+							
+							<b style="color:#1161ee">Email id pattern should be like this [*@gmail.com]</b>
+					  </div>
+		        </div>
+
+
+
+
+
+
+
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password" formControlName="password" [(ngModel)]="loginAccount.password">
+                </div>
+                
+                 <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+                        <div *ngIf="loginForm.controls['password'].errors.required">
+                                <b style="color:#1161ee"> password is required.</b>
+                        </div>
+                    
+                        <div *ngIf="loginForm.controls['password'].errors.maxlength">
+                                <b style="color:#1161ee"> Maximum characters for password is 15</b>
+                        </div>
+                        <div *ngIf="loginForm.controls['password'].errors.minlength">
+                                <b style="color:#1161ee"> Minimum characters for password is 6</b>
+                        </div>
+                    
+                    </div> 
+
+
+
+				<div class="group">
+                   
+                    
+                    <button class="button" [disabled]="!loginForm.valid" type="submit" >Sign In</button>
+                </div>
+               <!--  <a routerLink="/forget">forgot password?</a> -->
+                <div class="hr"></div>
+            </div><!-- 4 -->
+            <div class="for-pwd-htm">
+                <app-forgetpassword></app-forgetpassword>
+                </div>
+            
+            <!-- sign in htm ends here -->
+            
+			<!-- <div class="for-pwd-htm">
+				<div class="group">
+					<label for="user" class="label">Username or Email</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Reset Password">
+                </div>
+           
+				<div class="hr"></div>
+            </div> -->
+           
+           
+        
+		</div><!-- 3 -->
+</div><!-- 2 -->
+</div><!-- 1 -->
+
+</form>
+
+
+
+
+<div [hidden]="!submitted" > 
+     
+       <div *ngIf="response" class="position">
+            You successfully logged in!  
+            <br>
+      <button  class="btn btn-success" (click)="onLoginPage()">Continue Browsing</button>
+           
+        
+          </div>
+          <div *ngIf="!response" class="position">
+             <h6>Invalid credentails</h6><br>
+
+             <button  class="btn btn-success" (click)="onProduct()">retry</button>
+
+              </div>
+              
+      
+    </div> 
+</div>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

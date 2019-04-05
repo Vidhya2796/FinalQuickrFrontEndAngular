@@ -1,0 +1,396 @@
+<!-- <div class="backgroundcolor" style="text-align:center">
+	 <h3>
+	  Welcome to {{title}}!!
+	</h3>
+	 USERNAME FIELD 
+	<form [hidden]="submitted" [formGroup]="regForm" novalidate (ngSubmit)="onRegiter()">
+		  <div class="form-group">
+			<label class="center-block">
+				User Name* <input type="text" class="form-control" formControlName="name" [(ngModel)]="userAccount.name">
+			</label>
+		  </div>
+		  <div *ngIf="regForm.controls['name'].invalid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)" class="alert alert-danger">
+			  <div *ngIf="regForm.controls['name'].errors.required">
+			<b>  Username is required.</b>
+			</div>
+			<div *ngIf="regForm.controls['name'].errors.maxlength">
+				Maximum characters required for username is 20
+			  </div>
+			  <div *ngIf="regForm.controls['name'].errors.minlength">
+				Minimum characters required for username is 3
+			  </div>
+		  </div>
+
+EMAIL FIELD 
+		  <div class="form-group">
+				<label class="center-block">Email*
+					<input type="email" class="form-control" formControlName="email" [(ngModel)]="userAccount.email">
+				</label>
+			</div>
+			
+		  <div *ngIf="regForm.controls['email'].invalid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)" class="alert alert-danger">
+						<div *ngIf="regForm.controls['email'].errors.required">
+							Email is required.
+					  </div>
+						<div *ngIf="regForm.controls['email'].errors.pattern">
+						 [(a-z),(A-Z),(0-9)@gmail.com] 
+							Email id pattern should be like this [*@gmail.com]
+						</div>
+		  </div>
+
+ PHONE FIELD 
+		  <div class="form-group">
+			<label class="center-block">Phone Number*
+			  <input type="number"  class="form-control" formControlName="phonenumber" [(ngModel)]="userAccount.phonenumber">
+			</label>
+		  </div>
+		  <div *ngIf="regForm.controls['phonenumber'].invalid && (regForm.controls['phonenumber'].dirty || regForm.controls['phonenumber'].touched)" class="alert alert-danger">
+			  <div *ngIf="regForm.controls['phonenumber'].errors.required">
+			  Phone Number  is required.
+			</div>
+			<div *ngIf="regForm.controls['phonenumber'].errors.pattern">
+				Phone number should start with 9/8/7/6 and of 10 digits
+			  </div>
+		  </div>
+
+ PASSWORD FIELD 
+		  <div class="form-group">
+			<label class="center-block">Password*
+			  <input type="password" class="form-control" formControlName="password" [(ngModel)]="userAccount.password">
+			</label>
+		  </div>
+		  <div *ngIf="regForm.controls['password'].invalid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)" class="alert alert-danger">
+			  <div *ngIf="regForm.controls['password'].errors.required">
+			  Password  is required.
+			</div>
+			<div *ngIf="regForm.controls['password'].errors.maxlength">
+				Maximum characters for password is 15
+			  </div>
+			  <div *ngIf="regForm.controls['password'].errors.minlength">
+				Minimum characters for password is 6
+			  </div>
+			  <div *ngIf="regForm.controls['password'].errors.pattern">
+				Password should comprised of atleast one lowercase, uppercase and number
+			  </div>
+		  </div>
+ CONFIRM PASSWORD FIELD 
+		  <div class="form-group">
+			<label class="center-block">Confirm Password*
+			  <input type="password" class="form-control" [class.is-invalid]="regForm.errors?.misMatch" formControlName="confirmPassword">
+			  <small class="text-danger" *ngIf="regForm.errors?.misMatch">Passwords do not match</small>
+			</label>
+		  </div>
+		  <div *ngIf="regForm.controls['confirmPassword'].invalid && (regForm.controls['confirmPassword'].dirty || regForm.controls['confirmPassword'].touched)" class="alert alert-danger">
+			  <div *ngIf="regForm.controls['confirmPassword'].errors.required">
+				Confirm Password is required.
+				</div>
+		  </div>
+
+
+  
+REGISTER BUTTON 
+		  <button class="btn btn-primary" [disabled]="!regForm.valid" type="submit">Register</button>
+
+		
+			
+	</form>
+  
+	</div>
+
+  <div [hidden]="!submitted">
+		<h4>You submitted successfully! Welcome {{response.name}}</h4>
+		<button class="btn btn-success" (click)="onLogin()">Login</button>
+	</div> 
+
+
+
+
+ -->
+
+ <head>
+
+    <style>
+    
+    
+    /* Full-width input fields */
+    
+    /* Set a style for all buttons */
+    
+    
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    /* Center the image and position the close button */
+    
+    
+    
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #343a40;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 41%; /* Could be more or less, depending on screen size */
+    }
+    
+    /* The Close Button (x) */
+    .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+    
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+    
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+    }
+      
+    @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+    }
+    </style>
+    </head>
+ 
+ 
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div id="id01" >
+		<a class="navbar-brand "  href="/">Quikr<sub>Easy to Change</sub> </a>
+ <form [hidden]="submitted" [formGroup]="regForm" novalidate (ngSubmit)="onRegiter()" class="modal-content animate">
+		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+	<div class="login-wrap ">
+		<div class="login-html bg-dark">
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Register</label>
+			<input id="tab-2" type="radio" name="tab" class="for-pwd"><label for="tab-2" class="tab"></label> 
+			<div class="login-form">
+				<div class="sign-in-htm">
+
+
+						<div class="group">
+	
+	
+								<label for="user" class="label"> UserName</label>
+													<input id="user"  class="input" type="text" formControlName="name" [(ngModel)]="userAccount.name">
+													
+											</div>
+
+										
+										<div *ngIf="regForm.controls['name'].invalid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)" >
+											<div *ngIf="regForm.controls['name'].errors.required">
+										<b style="color:#1161ee">  Username is required.</b>
+										</div>
+										<div *ngIf="regForm.controls['name'].errors.maxlength">
+											Maximum characters required for username is 20
+											</div>
+											<div *ngIf="regForm.controls['name'].errors.minlength">
+											Minimum characters required for username is 3
+											</div>
+										</div>
+
+
+
+
+
+
+										<div class="group">
+	
+	
+												<label for="user" class="label"> Email</label>
+																	<input id="email" type="email" class="input"  formControlName="email" [(ngModel)]="userAccount.email">
+																	
+															</div>
+						
+															<div *ngIf="regForm.controls['email'].invalid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)">
+																	<div *ngIf="regForm.controls['email'].errors.required">
+																			<b style="color:#1161ee">	Email is required.</b>
+																	</div>
+																	<div *ngIf="regForm.controls['email'].errors.pattern">
+																	 
+																			<b style="color:#1161ee">Email id pattern should be like this [*@gmail.com]</b>
+																	</div>
+														</div>
+
+
+
+
+
+
+
+
+
+
+
+
+											
+			
+										
+										<div class="group">
+	
+	
+												<label for="user" class="label"> Phone Number</label>
+																	<input id="phone" class="input" type="number" formControlName="phonenumber" [(ngModel)]="userAccount.phonenumber">
+																	
+										</div>
+															
+							
+															<div *ngIf="regForm.controls['phonenumber'].invalid && (regForm.controls['phonenumber'].dirty || regForm.controls['phonenumber'].touched)">
+																	<div *ngIf="regForm.controls['phonenumber'].errors.required">
+																			<b style="color:#1161ee">Phone Number  is required.</b>
+																</div>
+																<div *ngIf="regForm.controls['phonenumber'].errors.pattern">
+																		<b style="color:#1161ee">Phone number should start with 9/8/7/6 and of 10 digits</b>
+																	</div>
+																</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+									
+	
+							
+	
+	
+	
+	
+	
+	
+	
+					<div class="group">
+						<label for="pass" class="label">Password</label>
+						<input id="pass" type="password" class="input" data-type="password" formControlName="password" [(ngModel)]="userAccount.password">
+									</div>
+
+
+									<div *ngIf="regForm.controls['password'].invalid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)" >
+											<div *ngIf="regForm.controls['password'].errors.required">
+													<b style="color:#1161ee">Password  is required.</b>
+										</div>
+										<div *ngIf="regForm.controls['password'].errors.maxlength">
+												<b style="color:#1161ee">Maximum characters for password is 15</b>
+											</div>
+											<div *ngIf="regForm.controls['password'].errors.minlength">
+													<b style="color:#1161ee">Minimum characters for password is 6</b>
+											</div>
+											<div *ngIf="regForm.controls['password'].errors.pattern">
+													<b style="color:#1161ee">Password should comprised of atleast one lowercase, uppercase and number</b>
+											</div>
+										</div>
+
+
+
+									
+					
+
+
+
+
+
+
+											<div class="group">
+												<label for="pass" class="label"> Confirm Password</label>
+												<input id="cpass" type="password" class="input" data-type="password"  [class.is-invalid]="regForm.errors?.misMatch" formControlName="confirmPassword">
+												<small class="text-danger" *ngIf="regForm.errors?.misMatch">Passwords do not match</small>
+															</div>
+
+
+															<div *ngIf="regForm.controls['confirmPassword'].invalid && (regForm.controls['confirmPassword'].dirty || regForm.controls['confirmPassword'].touched)">
+																	<div *ngIf="regForm.controls['confirmPassword'].errors.required">
+																			<b style="color:#1161ee">Confirm Password is required.</b>
+																	</div>
+																</div>
+															
+													
+
+
+
+
+	<br>
+					<div class="group">
+											<!-- <input type="submit" class="button" value="Sign In"> -->
+											
+				
+
+											<button class="button" [disabled]="!regForm.valid" type="submit">Register</button>
+					</div>
+				
+				</div>
+			
+			</div>
+	</div>
+	</div>
+	</form>
+
+	<br>
+	<br>
+
+	<div [hidden]="!submitted">
+			<h4>You submitted successfully! Welcome {{response.name}}</h4>
+			<button class="btn btn-success" (click)="onLogin()">Login</button>
+		</div> 
+	</div>
